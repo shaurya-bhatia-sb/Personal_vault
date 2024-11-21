@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Vault - Secret Vault</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="vault-container">
+        <div class="navbar">
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </div>
+
+        <div class="vault-content">
+            <h1>Your Secret Vault</h1>
+            <p>Store and manage your confidential information safely.</p>
+
+            <div class="vault-box">
+                <form method="POST" action="{{ url_for('vault') }}">
+                    <textarea name="secret" placeholder="Write your secrets here..." required></textarea>
+                    <button type="submit" class="cta-button">Save Secret</button>
+                </form>
+            </div>
+
+            <div class="previous-secrets">
+                <h2>Previous Secrets</h2>
+                {% if secrets %}
+                    <ul>
+                        {% for secret in secrets %}
+                            <li>
+                                {{ secret.secret }}
+                                <form action="{{ url_for('delete_secret', secret_id=secret.id) }}" method="POST" style="display:inline;">
+                                    <button type="submit" class="delete-button">Delete</button>
+                                </form>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No secrets found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
