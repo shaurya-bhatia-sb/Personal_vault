@@ -22,11 +22,11 @@ Personal_vault/
 ├── templates/
 │   ├── login.html       # Login page
 │   ├── register.html    # Registration page
-│   ├── vault1.html      # Vault interface
+│   ├── vault.html      # Vault interface
 ├── static/
 │   ├── styles.css       # CSS for the application
 ├── app.py               # Main Flask application
-├── vault.db             # SQLite database
+├── vault.sql             # SQLite database
 ├── requirements.txt     # Project dependencies
 └── README.md            # Documentation
 ```
