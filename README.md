@@ -23,7 +23,6 @@ Personal_vault/
 │   ├── login.html       # Login page
 │   ├── register.html    # Registration page
 │   ├── vault1.html      # Vault interface
-│   └── base.html        # Shared base template (if applicable)
 ├── static/
 │   ├── styles.css       # CSS for the application
 ├── app.py               # Main Flask application
